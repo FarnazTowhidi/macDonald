@@ -1,8 +1,30 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding:0px;
+  margin: 0px;
+  border-collapse: collapse;
 }
 
 a {
   color: #00B7FF;
+}
+
+.header {
+  background-color: #c11629;
+  color: white;
+  height:100px;
+}
+
+.foodContainer {
+  display:grid;
+  grid-template-columns: 3;
+  text-align: center;
+}
+
+.foodListitems {
+  grid-column: 2/3;
+}
+
+.title {
+  font-weight: bold;
 }

@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<div id="foodContainer">
+  <% foods.forEach (function(food) { %>
+  <div id="foodListitems">
+    <a href="/orders/<%=food._id%>"
+      ><img src="/images/<%=food.imageSmall%>" alt=""
+    /></a>
+    <br />
+    <label for="name" class="title"><%=food.name%>"</label><br />
+    <label for="price"><%=food.price%></label><br />
+    <label for="cals"><%=food.cals%></label><br />
+  </div>
+  <%})%>
+</div>
+
+<%- include('../partials/footer') %>

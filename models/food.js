@@ -8,7 +8,7 @@ const foodSchema = new Schema({
   price: {
     type: Number,
   },
-  image: {
+  imageSmall: {
     type: String,
   },
   cals: {

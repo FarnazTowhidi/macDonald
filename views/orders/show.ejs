@@ -1,0 +1,14 @@
+<%- include('../partials/header') %>
+
+<h2>Food Detail page</h2>
+<div id="foodListitems">
+  <img src="/images/<%=food.imageSmall%>" alt="" /><br />
+  <label for="name" class="title"><%=food.name%>"</label><br />
+  <label for="price"><%=food.price%></label><br />
+  <label for="cals"><%=food.cals%></label><br />
+
+  <form action="/orders/Add/<%=food._id%>" method="post">
+    <input type="submit" value="Add to bag" />
+  </form>
+</div>
+<%- include('../partials/footer') %>
