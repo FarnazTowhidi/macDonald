@@ -11,6 +11,9 @@ const foodSchema = new Schema({
   imageSmall: {
     type: String,
   },
+  imageBig: {
+    type: String,
+  },
   cals: {
     type: Number,
   },

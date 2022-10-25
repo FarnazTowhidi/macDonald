@@ -4,6 +4,7 @@ const ordersCtrl = require("../controllers/orders");
 
 router.get("/", ordersCtrl.index);
 router.get("/:id", ordersCtrl.show);
-//router.get("/orders/Add/:id", ordersCtrl.addOrder);
+router.get("/showOrder/:orderID", ordersCtrl.showOrder);
+router.post("/Add/:id", ordersCtrl.addOrder);
 
 module.exports = router;

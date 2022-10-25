@@ -1,14 +1,25 @@
 <%- include('../partials/header') %>
 
-<h2>Food Detail page</h2>
-<div id="foodListitems">
-  <img src="/images/<%=food.imageSmall%>" alt="" /><br />
-  <label for="name" class="title"><%=food.name%>"</label><br />
-  <label for="price"><%=food.price%></label><br />
-  <label for="cals"><%=food.cals%></label><br />
-
+<div id="foodShowContainer">
   <form action="/orders/Add/<%=food._id%>" method="post">
-    <input type="submit" value="Add to bag" />
+    <div id="foodShowImage">
+      <img src="/images/<%=food.imageBig%>" alt="" />
+    </div>
+    <div id="foodShow1">
+      <label for="name" class="foodShowtitle"><%=food.name%>"</label>
+    </div>
+    <div id="foodShow2"><label for="price"><%=food.price%> $</label></div>
+    <div id="foodShow3" class="font20">
+      <label for="cals"><%=food.cals%></label>
+    </div>
+    <div id="foodShow4">
+      <label for="Quantity">Qty</label
+      ><input type="text" value="1" name="Quantity" />
+    </div>
+    <div id="foodShow5">
+      <input type="submit" value="Add to bag1" />
+      <button type="submit" class="addToBag">Add to bag2</button>
+    </div>
   </form>
 </div>
 <%- include('../partials/footer') %>

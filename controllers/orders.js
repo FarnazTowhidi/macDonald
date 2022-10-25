@@ -8,14 +8,35 @@ function index(req, res) {
   });
 }
 
-function addOrder(req, res) {}
+function addOrder(req, res) {
+  const food = {
+    food: req.params.id,
+    Quantity: req.body.Quantity,
+  };
+  const order = new Orders();
+  order.date = Date.now();
+
+  order.foods.push(food);
+  const orderID = order._id;
+  order.save(function (err) {
+    if (err) return console.log(err.message);
+    res.redirect(`/orders/showOrder/${orderID}`);
+  });
+}
 
 function show(req, res) {
   Foods.findById(req.params.id, function (err, food) {
-    console.log(food);
     if (err) return res.send(err.message);
     res.render("orders/show.ejs", { food });
   });
 }
 
-module.exports = { index, addOrder, show };
+function showOrder(req, res) {
+  Orders.findById(req.params.orderID, function (err, order) {
+    if (err) return res.send(err.message);
+    // Foods.findOne({'-id':});
+    res.render("orders/showOrder.ejs", { order });
+  });
+}
+
+module.exports = { index, addOrder, show, showOrder };
