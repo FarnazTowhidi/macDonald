@@ -1,21 +1,16 @@
 const Foods = require("../models/food.js");
 const Orders = require("../models/order.js");
 
-function index(req, res) {
-  Foods.find({}, function (err, foods) {
-    if (err) return res.send(err.message);
-    res.render("orders/index.ejs", { foods, user: req.user });
-  });
-}
 
 function addOrder(req, res) {
+  console.log ("test" + req.session.passport)
   const food = {
     food: req.params.id,
     Quantity: req.body.Quantity,
   };
   const order = new Orders();
   order.date = Date.now();
-
+  order.userId = parseInt(req.user._id)
   order.foods.push(food);
   const orderID = order._id;
   order.save(function (err) {
@@ -24,19 +19,15 @@ function addOrder(req, res) {
   });
 }
 
-function show(req, res) {
-  Foods.findById(req.params.id, function (err, food) {
-    if (err) return res.send(err.message);
-    res.render("orders/show.ejs", { food });
-  });
-}
 
 function showOrder(req, res) {
-  Orders.findById(req.params.orderID, function (err, order) {
+  Orders.findById(req.params.orderID).
+  populate('foods.food')
+  .exec(function (err, order) {
     if (err) return res.send(err.message);
     // Foods.findOne({'-id':});
-    res.render("orders/showOrder.ejs", { order });
+    res.render("orders/showOrder.ejs", { order,user: req.user });
   });
 }
 
-module.exports = { index, addOrder, show, showOrder };
+module.exports = {  addOrder, showOrder };

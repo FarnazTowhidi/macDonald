@@ -13,29 +13,30 @@
   </head>
 
   <body>
-    <div class="header">
-      <div>
-        <span>
-          <a href="/orders/"><li>Menu</li></a></span
-        >
-        <span
-          ><a href="/orders/showOrder/"><li>Order</li></a></span
-        >
+    <div>
+      <div class="header">
+        
+        <div class="hMenubar">
+          <a class="white" href="/orders/">Menu</a>
+          <a class="white" href="/orders/showOrder/">Order</a>
+          
+        </div>
+        <div class="Oath">
+          <!-- <ul class="right">
+            <li>
+              <% if (user) { %>
+                  <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+              <% } else { %>
+                  <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+              <% } %>
+             
+            </li>
+          </ul> -->
+          
+        
+          <div class="hLogo">
+            <a href="/"><img src="/images/McD-squareLogo.png" alt="" /></a>
+          </div>
+        </div>
       </div>
-      <div><img src="/images/McD-squareLogo.png" alt="" /></div>
-      <ul class="right">
-        <li>
-          <% if (user) { %>
-          <a href="/logout"
-            ><i class="material-icons left">trending_flat</i>Log Out</a
-          >
-          <% } else { %>
-          <a href="/auth/google"
-            ><i class="material-icons left">vpn_key</i>Login with Google</a
-          >
-          <% } %>
-        </li>
-      </ul>
-    </div>
-  </body>
-</html>
+   

@@ -1,8 +1,9 @@
 <%- include('../partials/header') %>
 
 <h1>Order summary</h1>
-<%=order.data%> <br />
+
 <%order.foods.forEach (function(food) {%>
-<div><%=food.id%></div>
-<div><%=food.Quantity%></div>
+    user:<%=order.userId%><br>  
+    <div>name:<%=food.food.name%></div>
+    <div><%=food.Quantity%></div>
 <%})%>

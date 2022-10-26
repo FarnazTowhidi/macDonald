@@ -4,8 +4,11 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var passport = require("passport");
+
 var indexRouter = require("./routes/index");
 var orderRouter = require("./routes/order");
+var foodRouter = require("./routes/order");
+
 var session = require("express-session");
 const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
 require("dotenv").config();
@@ -38,6 +41,7 @@ app.use(passport.session());
 
 app.use("/", indexRouter);
 app.use("/orders/", orderRouter);
+app.use("/foods/", foodRouter);
 
 app.use(passport.initialize());
 app.use(passport.session());

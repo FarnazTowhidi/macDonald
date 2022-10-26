@@ -23,14 +23,30 @@ ul {
   color: white;
   height: 220px;
   display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas:
+    "1 2 3"
+}
+
+.hMenubar {
+  grid-area: "1";
+}
+
+.hLogo {
+  grid-area: "2";
+}
+
+.Oath {
+  grid-area: "3";
 }
 
 .footer {
   background-color: white;
   color: white;
-  height: 220px;
+  height: 100px;
   display: grid;
-  align-items: center;
+  
+  align-content:flex-end
 }
 
 .font20 {

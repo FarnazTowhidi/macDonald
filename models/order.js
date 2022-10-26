@@ -17,6 +17,7 @@ const orderSchema = new Schema({
   date: {
     type: Date,
   },
+  userId: Number,
   foods: [
     {
       food: { type: Schema.Types.ObjectId, ref: "food" },
@@ -25,4 +26,4 @@ const orderSchema = new Schema({
   ],
 });
 
-module.exports = mongoose.model("Orders", orderSchema);
+module.exports = mongoose.model("Order", orderSchema);
