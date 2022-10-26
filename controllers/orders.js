@@ -4,7 +4,7 @@ const Orders = require("../models/order.js");
 function index(req, res) {
   Foods.find({}, function (err, foods) {
     if (err) return res.send(err.message);
-    res.render("orders/index.ejs", { foods });
+    res.render("orders/index.ejs", { foods, user: req.user });
   });
 }
 

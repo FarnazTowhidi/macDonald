@@ -33,6 +33,10 @@ ul {
   align-items: center;
 }
 
+.font20 {
+  font-size: 20px;
+}
+
 #foodContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -121,4 +125,34 @@ ul {
   color: rgb(39, 38, 38);
   border: 1px solid #ffb71cc3;
   border-radius: 10px;
+}
+
+.bgRed {
+  background-color: #db0006;
+}
+.white {
+  color: white;
+  text-decoration: none;
+  font: normal;
+}
+
+.indexContainter {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  align-content: center;
+  grid-template-areas:
+    ". a ."
+    ". b ."
+    ". c .";
+}
+.siteBtn {
+  grid-area: a;
+}
+.Logo {
+  grid-area: b;
+}
+.Google {
+  grid-area: c;
 }

@@ -1,8 +1,8 @@
 <%- include('../partials/header') %>
 
 <div id="foodContainer">
-  <%foods.length%> <br /><% foods.forEach (function(food) { %>
-  <div id="foodListitems">
+  <% foods.forEach (function(food) { %>
+  <div>
     <div>
       <a href="/orders/<%=food._id%>">
         <img src="/images/<%=food.imageSmall%>"

@@ -11,6 +11,7 @@
     <title>macDonalds</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
+
   <body>
     <div class="header">
       <div>
@@ -22,6 +23,19 @@
         >
       </div>
       <div><img src="/images/McD-squareLogo.png" alt="" /></div>
+      <ul class="right">
+        <li>
+          <% if (user) { %>
+          <a href="/logout"
+            ><i class="material-icons left">trending_flat</i>Log Out</a
+          >
+          <% } else { %>
+          <a href="/auth/google"
+            ><i class="material-icons left">vpn_key</i>Login with Google</a
+          >
+          <% } %>
+        </li>
+      </ul>
     </div>
   </body>
 </html>
