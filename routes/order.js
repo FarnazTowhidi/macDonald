@@ -3,9 +3,10 @@ var router = require("express").Router();
 const passport = require("passport");
 
 
-// router.get("/", ordersCtrl.index);
-// router.get("/:id", ordersCtrl.show);
 router.get("/showOrder/:orderID", ordersCtrl.showOrder);
+router.get("/checkout/", ordersCtrl.showAllOrders);
 router.post("/Add/:id", ordersCtrl.addOrder);
 
 module.exports = router;
+
+

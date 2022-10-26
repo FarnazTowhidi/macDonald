@@ -1,0 +1,40 @@
+<%- include('../partials/header') %>
+<h2>Checkout</h2>
+
+<%if (orders.length > 0) {%>
+    <table>      
+      <%order.forEach (function(food) {%>  
+      <tr class="flightRow" >
+      
+        <td><img src="/images/<%=food.foods[0].food.imageSmall%>" alt="" width="70%"/></td>
+        <td><%=food.foods[0].food.name%></td>
+       
+        <td><input type="text" name="Quantity" value="<%=food.foods[0].Quantity%>"></td>
+        <td class="red">
+            <form
+            action="/flights/updateOrder/"
+            method="POST">
+            <button type="submit" class="addTicket">
+              Update Order
+            </button>
+          </form>
+        </td>
+        <td>
+          <form
+            action="/flights/deleteOrder/?_method=DELETE"
+            method="POST">
+            <button type="submit" class="addTicket" style="width: 80px">
+              Delete
+            </button>
+          </form>
+        </td>
+      </tr>
+      <%})%>
+    </table>
+    <%} else {%>
+    <div>No orders yet </div>
+    <% } %> 
+
+
+
+<%- include('../partials/footer') %>

@@ -5,7 +5,7 @@
 <%order.foods.forEach (function(food) {%>
     user:<%=order.userId%><br>  
     <div>name:<%=food.food.name%></div>
-    <div><%=food.Quantity%></div>
+    <div><input type="text" value=<%=food.Quantity%> name="Quantity"></div>
 <%})%>
 
 <%- include('../partials/footer') %>

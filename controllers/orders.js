@@ -1,16 +1,17 @@
-const Foods = require("../models/food.js");
 const Orders = require("../models/order.js");
 
 
 function addOrder(req, res) {
-  console.log ("test" + req.session.passport)
   const food = {
     food: req.params.id,
     Quantity: req.body.Quantity,
   };
   const order = new Orders();
   order.date = Date.now();
-  order.userId = parseInt(req.user._id)
+
+  // order.userId = parseInt(req.user)
+  
+  order.userId = parseInt(req.session.passport.user)
   order.foods.push(food);
   const orderID = order._id;
   order.save(function (err) {
@@ -25,9 +26,19 @@ function showOrder(req, res) {
   populate('foods.food')
   .exec(function (err, order) {
     if (err) return res.send(err.message);
-    // Foods.findOne({'-id':});
     res.render("orders/showOrder.ejs", { order,user: req.user });
   });
 }
 
-module.exports = {  addOrder, showOrder };
+function showAllOrders(req, res) {
+  Orders.find({userId:parseInt(req.session.passport.user)}).
+  populate('foods.food')
+  .exec(function (err, order) {
+    if (err) return res.send(err.message);
+    res.render("orders/checkout.ejs", { orders });
+    
+  });
+}
+
+
+module.exports = {  addOrder, showOrder ,showAllOrders};

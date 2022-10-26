@@ -7,7 +7,6 @@ function index(req, res) {
     });
   }
   
-
   function show(req, res) {
     Foods.findById(req.params.id, function (err, food) {
       if (err) return res.send(err.message);

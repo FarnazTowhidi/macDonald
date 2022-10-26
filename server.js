@@ -7,7 +7,7 @@ var passport = require("passport");
 
 var indexRouter = require("./routes/index");
 var orderRouter = require("./routes/order");
-var foodRouter = require("./routes/order");
+var foodRouter = require("./routes/food");
 
 var session = require("express-session");
 const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
