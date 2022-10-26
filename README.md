@@ -10,7 +10,7 @@ Setup
 
 ### Screen shot
 
-<img src="./images/screenShot1.png"
+<img src="./public/images/screenShot1.png"
       />
 
 ## Technologies used
