@@ -37,19 +37,26 @@ function showAllOrders(req, res) {
     });
 }
 
-function editOrder(req, res) {
-  Orders.findByIdAndUpdate(req.params.orderID, req.body, function (err, order) {
-    console.log("test" + order);
+function update(req, res) {
+  Orders.findById(req.params.orderID, function (err, order) {
     if (err) return res.send(err.message);
-    res.redirect("orders/checkout.ejs");
+    order.foods[0].Quantity = req.body.Quantity;
+    res.redirect("/orders/checkout");
   });
 }
 
 function deleteOrder(req, res) {
-  Orders.findByIdAndDelete(req.params.orderID, function (err, order) {
+  Orders.findOneAndRemove({ _id: req.params.orderID }, function (err, order) {
+    console.log(order);
     if (err) return res.send(err.message);
-    res.redirect("orders/checkout.ejs");
+    res.redirect("/orders/checkout");
   });
 }
 
-module.exports = { addOrder, showOrder, showAllOrders, editOrder, deleteOrder };
+module.exports = {
+  addOrder,
+  showOrder,
+  showAllOrders,
+  update,
+  deleteOrder,
+};

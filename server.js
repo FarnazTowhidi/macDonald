@@ -4,8 +4,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var passport = require("passport");
-var methodOverride = require('method-override');
-
+var methodOverride = require("method-override");
 var indexRouter = require("./routes/index");
 var orderRouter = require("./routes/order");
 var foodRouter = require("./routes/food");
@@ -29,6 +28,7 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(methodOverride("_method"));
 
 app.use(
   session({

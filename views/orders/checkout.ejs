@@ -8,7 +8,7 @@
       <img src="/images/<%=order.foods[0].food.imageSmall%>" />
     </div>
     <div><%=order.foods[0].food.name%></div>
-    <form action="/orders/updateOrder/<%=order.foods[0].id%>" method="post">
+    <form action="/orders/updateOrder/<%=order.id%>" method="post">
       <div>
         <input
           type="number"
@@ -21,7 +21,7 @@
     </div>
   </form>
   <div>
-    <form action="/orders/deleteOrder/<%=order.foods[0].id%>" method="post">
+    <form action="/orders/deleteOrder/<%=order.id%>?_method=DELETE" method="POST">
       <button type="submit">Delete Order</button>
     </form>
   </div>
