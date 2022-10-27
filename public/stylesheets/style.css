@@ -18,19 +18,23 @@ ul {
   list-style-type: none;
 }
 
+h1 {
+  margin: 20px;
+}
+
 .inpNumber {
-  border:1px solid gray;
+  border: 1px solid gray;
   border-radius: 5px;
   size: 10;
 }
 
 .siteContainer {
-  display:grid;
-  grid-template-rows: 1fr 3fr 1fr ;
-  grid-template-areas: 
-  "S1"
-  "S2"
-  "S3";
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-areas:
+    "S1"
+    "S2"
+    "S3";
   justify-items: stretch;
 }
 
@@ -60,7 +64,7 @@ ul {
 .hMenubar {
   grid-area: "1";
   text-align: right;
-  margin:10px;
+  margin: 10px;
 }
 
 .hLogo {
@@ -86,7 +90,7 @@ ul {
 #foodShowContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
- grid-template-rows: 1fr;;
+  grid-template-rows: 1fr;
 }
 
 #foodShowImage {
@@ -98,7 +102,7 @@ ul {
 }
 
 #foodShowDesc > div {
-  padding:5px;
+  padding: 5px;
 }
 
 .title {

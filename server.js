@@ -41,8 +41,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/", indexRouter);
-app.use("/orders/", orderRouter);
-app.use("/foods/", foodRouter);
+app.use("/orders", orderRouter);
+app.use("/foods", foodRouter);
 
 app.use(passport.initialize());
 app.use(passport.session());

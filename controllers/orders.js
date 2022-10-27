@@ -38,7 +38,7 @@ function showAllOrders(req, res) {
 }
 
 function editOrder(req, res) {
-  Orders.findByIdAndDelete(req.params.orderID, function (err, order) {
+  Orders.findByIdAndUpdate(req.params.orderID, req.body, function (err, order) {
     if (err) return res.send(err.message);
     res.redirect("orders/checkout.ejs");
   });

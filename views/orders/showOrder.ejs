@@ -3,9 +3,7 @@
 <h1>Order summary</h1>
 
 <%order.foods.forEach (function(food) {%>
-    user:<%=order.userId%><br>  
-    <div>name:<%=food.food.name%></div>
-    <div><%=food.Quantity%></div>
-<%})%>
-
-<%- include('../partials/footer') %>
+<div><img src="/images/<%=order.foods[0].food.imageBig%>" /></div>
+<div><%=food.Quantity%>&nbsp;<%=food.food.name%> ordered</div>
+<div></div>
+<%})%> <%- include('../partials/footer') %>
