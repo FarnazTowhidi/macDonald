@@ -8,7 +8,7 @@ The website offers different foods to the user, with the user to have the option
 
 <img src="./public/images/screenShot1.png"/>
 
-<img src="./public/images/screenshot2.png"/>
+<img src="./public/images/mcdonalds-small-big-mac.jpg"/>
 
 <img src="./public/images/screenShot3.png"/>
 
