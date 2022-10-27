@@ -34,6 +34,5 @@ To see this game, [click here](https://farnaztowhidi.github.io/warCardGame/)
 
 ## Next Steps
 
-- [ ] To calculate the overall price of menu.
-- [ ] To update the style for mobile.
-
+- [ ] To calculate the overall price in checkout.
+- [ ] To add mobile friendly style.
