@@ -12,7 +12,7 @@ Setup
 
 <img src="./public/images/screenShot1.png"/>
 <img src="./public/images/screenShot2.png"/>
-<img src="./public/images/screenShot2.png"/>
+<img src="./public/images/screenShot3.png"/>
 
 ## Technologies used
 
@@ -26,7 +26,7 @@ Setup
 
 ### Getting Started
 
-To see this game, [click here](https://farnaztowhidi.github.io/warCardGame/)
+To see this app, [click here](https://macdonald-generalassembly.herokuapp.com/)
 
 ### Trello
 
