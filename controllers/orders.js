@@ -1,6 +1,5 @@
 const Orders = require("../models/order.js");
 
-
 function addOrder(req, res) {
   const food = {
     food: req.params.id,
@@ -10,8 +9,8 @@ function addOrder(req, res) {
   order.date = Date.now();
 
   // order.userId = parseInt(req.user)
-  
-  order.userId = parseInt(req.session.passport.user)
+
+  order.userId = parseInt(req.session.passport.user);
   order.foods.push(food);
   const orderID = order._id;
   order.save(function (err) {
@@ -20,25 +19,36 @@ function addOrder(req, res) {
   });
 }
 
-
 function showOrder(req, res) {
-  Orders.findById(req.params.orderID).
-  populate('foods.food')
-  .exec(function (err, order) {
-    if (err) return res.send(err.message);
-    res.render("orders/showOrder.ejs", { order,user: req.user });
-  });
+  Orders.findById(req.params.orderID)
+    .populate("foods.food")
+    .exec(function (err, order) {
+      if (err) return res.send(err.message);
+      res.render("orders/showOrder.ejs", { order, user: req.user });
+    });
 }
 
 function showAllOrders(req, res) {
-  Orders.find({userId:parseInt(req.session.passport.user)}).
-  populate('foods.food')
-  .exec(function (err, order) {
+  Orders.find({ userId: parseInt(req.session.passport.user) })
+    .populate("foods.food")
+    .exec(function (err, orders) {
+      if (err) return res.send(err.message);
+      res.render("orders/checkout.ejs", { orders });
+    });
+}
+
+function editOrder(req, res) {
+  Orders.findByIdAndDelete(req.params.orderID, function (err, order) {
     if (err) return res.send(err.message);
-    res.render("orders/checkout.ejs", { orders });
-    
+    res.redirect("orders/checkout.ejs");
   });
 }
 
+function deleteOrder(req, res) {
+  Orders.findByIdAndDelete(req.params.orderID, function (err, order) {
+    if (err) return res.send(err.message);
+    res.redirect("orders/checkout.ejs");
+  });
+}
 
-module.exports = {  addOrder, showOrder ,showAllOrders};
+module.exports = { addOrder, showOrder, showAllOrders, editOrder, deleteOrder };

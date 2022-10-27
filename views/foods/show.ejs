@@ -5,20 +5,24 @@
     <div id="foodShowImage">
       <img src="/images/<%=food.imageBig%>" alt="" />
     </div>
-    <div id="foodShow1">
-      <label for="name" class="foodShowtitle"><%=food.name%>"</label>
+    <div id="foodShowDesc">
+      <div>
+        <label for="name" class="foodShowtitle"><%=food.name%>"</label>
+      </div>
+      <div class="font20">
+        <label for="cals"><%=food.cals%>&nbsp;Cals</label>
+      </div>
+      <div><label for="price"><%=food.price%> $</label></div>
+      
+      <div>
+        <label for="Quantity">Number&nbsp;</label>
+        <input type="Number" value="1" name="Quantity" class="inpNumber" />
+      </div>
+      <div>
+        <button type="submit" class="addToBag">Add to bag</button>
+      </div>
     </div>
-    <div id="foodShow2"><label for="price"><%=food.price%> $</label></div>
-    <div id="foodShow3" class="font20">
-      <label for="cals"><%=food.cals%></label>
-    </div>
-    <div id="foodShow4">
-      <label for="Quantity">Qty</label
-      ><input type="text" value="1" name="Quantity" />
-    </div>
-    <div id="foodShow5">
-      <button type="submit" class="addToBag">Add to bag</button>
-    </div>
+    
   </form>
 </div>
 <%- include('../partials/footer') %>
