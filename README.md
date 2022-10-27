@@ -7,7 +7,9 @@ The website offers different foods to the user, with the user to have the option
 ### Screen shot
 
 <img src="./public/images/screenShot1.png"/>
+
 <img src="./public/images/screenShot2.png"/>
+
 <img src="./public/images/screenShot3.png"/>
 
 ## Technologies used
