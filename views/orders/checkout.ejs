@@ -3,21 +3,21 @@
 
 <%if (orders.length > 0) {%> <%orders.forEach (function(order) {%>
 
-  <div>
+  <div id="checkoutContainer">
     <div>
       <img src="/images/<%=order.foods[0].food.imageSmall%>" />
     </div>
     <div><%=order.foods[0].food.name%></div>
     <form action="/orders/updateOrder/<%=order.foods[0].id%>" method="post">
-    <div>
-      <input
-        type="number"
-        name="Quantity"
-        step="1"
-        value="<%=order.foods[0].Quantity%>"
-      />
-      <div><button type="submit">Update Order</button></div>
-    </div>
+      <div>
+        <input
+          type="number"
+          name="Quantity"
+          step="1"
+          value="<%=order.foods[0].Quantity%>"
+        />
+        <div><button type="submit">Update Order</button></div>
+      </div>
     </div>
   </form>
   <div>

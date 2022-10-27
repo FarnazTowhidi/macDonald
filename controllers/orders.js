@@ -39,6 +39,7 @@ function showAllOrders(req, res) {
 
 function editOrder(req, res) {
   Orders.findByIdAndUpdate(req.params.orderID, req.body, function (err, order) {
+    console.log("test" + order);
     if (err) return res.send(err.message);
     res.redirect("orders/checkout.ejs");
   });
