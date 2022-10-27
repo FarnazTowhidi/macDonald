@@ -10,8 +10,9 @@ Setup
 
 ### Screen shot
 
-<img src="./public/images/screenShot1.png"
-      />
+<img src="./public/images/screenShot1.png"/>
+<img src="./public/images/screenShot2.png"/>
+<img src="./public/images/screenShot2.png"/>
 
 ## Technologies used
 
@@ -33,6 +34,6 @@ To see this game, [click here](https://farnaztowhidi.github.io/warCardGame/)
 
 ## Next Steps
 
-- [ ] Add a ...
-- [ ] Add a ..
-- [ ] Add ..
+- [ ] To calculate the overall price of menu.
+- [ ] To update the style for mobile.
+

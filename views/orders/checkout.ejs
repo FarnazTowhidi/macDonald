@@ -21,6 +21,11 @@
       <td>
         <button type="submit">Update Order</button>
       </td>
+      <form action="/orders/deleteOrder/<%=order.foods[0].id%>" method="post">
+        <td>
+          <button type="submit">Delete Order</button>
+        </td>
+      </form>
     </tr>
   </form>
 
