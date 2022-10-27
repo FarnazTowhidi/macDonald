@@ -4,10 +4,6 @@
 
 The website offers different foods to the user, with the user to have the option to order the food and editing and also deleting the order
 
-###
-
-Setup
-
 ### Screen shot
 
 <img src="./public/images/screenShot1.png"/>
