@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-
+<h1>Our Menu</h1>
 <div id="foodContainer">
   <% foods.forEach (function(food) { %>
   <div>
@@ -8,10 +8,10 @@
         <img src="/images/<%=food.imageSmall%>"
       /></a>
     </div>
-    <div><label for="name" class="title"><%=food.name%>"</label></div>
+    <div>
+      <h2><%=food.name%></h2>
+    </div>
     <div><label for="price"><%=food.price%>&nbsp; $</label></div>
   </div>
   <%})%>
 </div>
-
-

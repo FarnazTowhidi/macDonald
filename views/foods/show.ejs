@@ -1,27 +1,29 @@
 <%- include('../partials/header') %>
 
 <div id="foodShowContainer">
-  <form action="/orders/Add/<%=food._id%>" method="post">
-    <div id="foodShowImage">
-      <img src="/images/<%=food.imageBig%>" alt="" />
-    </div>
-    <div id="foodShowDesc">
-      <div>
-        <label for="name" class="foodShowtitle"><%=food.name%>"</label><br><br><br>
+  <div>
+    <img src="/images/<%=food.imageBig%>" />
+  </div>
+  <div>
+    <form action="/orders/Add/<%=food._id%>" method="post">
+      <div id="foodShow2">
+        <h1><%=food.name%></h1>
+        <br />
+        Calories: &nbsp;<%=food.cals%><br />
+        Price: &nbsp;<%=food.price%>$ <br />
+        Number:
+        <input
+          type="Number"
+          value="1"
+          name="Quantity"
+          class="inpNumber"
+          size="5"
+        /><br /><br />
+        <div style="text-align: left">
+          <button type="submit" class="addToBag">Add to bag</button>
+        </div>
       </div>
-      <div class="font20">
-        Calories&nbsp;<%=food.cals%>
-      </div>
-      <div>Price: &nbsp;<%=food.price%> $</div>    
-      <div>
-        <label for="Quantity">Number&nbsp;</label>
-        <input type="Number" value="1" name="Quantity" class="inpNumber" />
-      </div>
-      <div>
-        <button type="submit" class="addToBag">Add to bag</button>
-      </div>
-    </div>
-    
-  </form>
+    </form>
+  </div>
 </div>
 <%- include('../partials/footer') %>

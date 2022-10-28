@@ -19,13 +19,19 @@ ul {
 }
 
 h1 {
-  margin: 20px;
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+h2 {
+  font-size: 15px;
 }
 
 .inpNumber {
   border: 1px solid gray;
   border-radius: 5px;
-  size: 10;
+  size: 5;
 }
 
 .siteContainer {
@@ -77,37 +83,37 @@ h1 {
 }
 
 #foodContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: flex;
   justify-items: center;
   align-items: center;
 }
 
 #foodContainer div {
   justify-self: center;
+  justify-items: center;
+  flex: 25%;
 }
 
 #foodShowContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-#foodShowImage {
-  grid-area: "FSC1";
+#foodShowContainer div {
+  justify-self: center;
+  flex: 30% 70%;
 }
 
-#foodShowDesc {
-  grid-area: "FSC2";
+#foodShow2 {
+  text-align: left;
+  padding: 20px;
+  font-size: 15px;
+  line-height: 25px;
 }
 
 #foodShowDesc > div {
   padding: 5px;
-}
-
-.title {
-  font-weight: bold;
-  font-size: 20px;
 }
 
 .foodShowtitle {
@@ -139,8 +145,8 @@ h1 {
 }
 
 .addToBag {
-  width: 180px;
-  height: 50px;
+  width: 150px;
+  height: 40px;
   background-color: #ffb81c;
   color: rgb(39, 38, 38);
   border: 1px solid #ffb71cc3;

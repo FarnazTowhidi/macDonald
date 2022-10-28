@@ -8,8 +8,6 @@ function addOrder(req, res) {
   const order = new Orders();
   order.date = Date.now();
 
-  // order.userId = parseInt(req.user)
-
   order.userId = parseInt(req.session.passport.user);
   order.foods.push(food);
   const orderID = order._id;
@@ -38,17 +36,11 @@ function showAllOrders(req, res) {
 }
 
 async function update(req, res) {
-  console.log(Orders);
-  console.log(req.params.orderID);
-  Orders.findById(req.params.orderID, function (err, order) {});
-
-  // const filter = { _id: req.params.orderID };
-  // const update = { Quantity: req.body.Quantity };
-  // console.log(filter);
-  // console.log(update);
-  // let doc = await Orders.findOneAndUpdate(filter, update, { new: true });
-  // console.log(doc);
-  res.redirect("/orders/checkout");
+  Orders.findById(req.params.orderID, function (err, order) {
+    order.foods[0].Quantity = req.body.Quantity;
+    order.save();
+    res.redirect("/orders/checkout/");
+  });
 }
 
 function deleteOrder(req, res) {
