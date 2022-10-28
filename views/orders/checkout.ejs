@@ -1,13 +1,14 @@
 <%- include('../partials/header') %>
-<h1>Checkout</h1>
+<h3>Your Order</h3>
 
 <%if (orders.length > 0) {%> <%orders.forEach (function(order) {%>
 
-  <div id="checkoutContainer">
-    <div>
-      <img src="/images/<%=order.foods[0].food.imageSmall%>" />
-    </div>
-    <div><%=order.foods[0].food.name%></div>
+<div id="checkoutContainer">
+  <div>
+    <img src="/images/<%=order.foods[0].food.imageSmall%>" width="50%" />
+  </div>
+  <div style="width: 100px"><%=order.foods[0].food.name%>&nbsp;</div>
+  <div>
     <form action="/orders/updateOrder/<%=order.id%>" method="post">
       <div>
         <input
@@ -16,17 +17,23 @@
           step="1"
           value="<%=order.foods[0].Quantity%>"
         />
-        <div><button type="submit">Update Order</button></div>
+        <button class="btnCheckout" type="submit">Update Order</button>&nbsp;
       </div>
-    </div>
-  </form>
-  <div>
-    <form action="/orders/deleteOrder/<%=order.id%>?_method=DELETE" method="POST">
-      <button type="submit">Delete Order</button>
+      <div></div>
     </form>
   </div>
+  <div>
+    <form
+      action="/orders/deleteOrder/<%=order.id%>?_method=DELETE"
+      method="POST"
+    >
+      <button class="btnCheckout" type="submit">Delete Order</button>
+    </form>
   </div>
+</div>
 
-<%})%> <%} else {%>
-<div>No orders yet</div>
-<% } %>
+<div>
+  <%})%> <%} else {%>
+  <div>No orders yet</div>
+  <% } %>
+</div>
